@@ -14,8 +14,12 @@ This repository is for the web scraping assignment for the UCSD Data Bootcamp us
 
 ### app.py
 - Main Flask application file
+- 
 ### scrape_mars.py
 - Holds the scraper function
+- 
+### mission_to_mars.ipynb
+- Jupyter Notebook for scraping code
 
 ### templates
 - Contains index.html file
