@@ -1,0 +1,49 @@
+/* for testing */
+.container {
+  /* border:1px solid; */
+}
+.container div {
+  /* border:1px solid; */
+}
+
+#scrape_header{
+  height:200px;
+}
+
+
+#news_bar{
+  background-color:#c9e4e7;
+  padding:10px;
+  margin:10px;
+
+}
+
+#image_facts{
+  background-color:#c9e4e7;
+  padding:10px;
+  margin:10px;
+
+}
+
+#featured_image{
+  background-color:#c9e4e7;
+  padding:10px;
+  margin:10px;
+
+}
+
+#facts_table{
+  background-color:#c9e4e7;;
+  padding:10px;
+  margin:10px;
+}
+
+#image_facts{
+  background-color:#c9e4e7;
+  padding:10px;
+  margin:10px;
+
+}
+
+
+

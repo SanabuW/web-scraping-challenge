@@ -5,11 +5,12 @@
 from bs4 import BeautifulSoup as bs
 import requests
 import time
+import pymongo
 
-# %% [markdown]
-# # NASA Mars News
-# Begin function here
-def scrape ():
+def scrape_nasa ():
+    # %% [markdown]
+    # # NASA Mars News
+
     # %%
     # Build Beautiful Soup object
     url_home = "https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest"
@@ -62,7 +63,7 @@ def scrape ():
     # # Mars Facts
 
     # %%
-
+    # Get facts table
     import pandas as pd
     table_url = "https://space-facts.com/mars/"
     mars_table = pd.read_html(table_url)[0]
@@ -73,11 +74,11 @@ def scrape ():
 
 
     # %%
-    # convert to html table and save to file
+    # convert to html table and save to file, if necessary later
     mars_table.to_html("mars_table.html")
 
     # show HTML
-    mars_table.to_html()
+    table_html = mars_table.to_html()
 
     # %% [markdown]
     # # Mars Hemispheres
@@ -136,21 +137,15 @@ def scrape ():
 
 
     # %%
-    hemi_list
-# End scrape function
+    scrape_output = {
+        "news_title": news_title,
+        "news_p": news_p,
+        "image_full_url": image_full_url,
+        "table_html": table_html,
+        "hemi_list": hemi_list
+    }
 
-# %%
-from flask import Flask
-app = Flask(__name__)
 
-
-@app.route("/")
-def index():
-    print("[printMessage]")
-    return "[returnMessage]"
-
-@app.route("/scrape")
-def index():
-    print("[printMessage]")
-    return "[returnMessage]"
-
+    return scrape_output
+    # %%
+    #End scrape function

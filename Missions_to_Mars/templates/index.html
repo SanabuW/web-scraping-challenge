@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" type="text/css" href="..\static\css\styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</head>
+<!---->
+<body>
+<!-- Breakpoint is set at Bootstrap md (768px) -->
+<div class="container" id="master_cont" >
+
+<!-- scrape header -->
+<!-- header-->
+<!-- button-->
+  <div class="container-fluid text-center" id="scrape_header">
+    <h1>Mission to Mars</h1>
+    <a href = "/scrape" class="align-middle" role ="button">
+      <button type="button" class="btn btn-primary">Update Content</button>
+    </a>
+  </div>
+
+<!-- news bar -->
+<div class="container-fluid" id="news_bar">
+  <h1>{{search_result.news_title}}</h1>
+  <p>{{search_result.news_p}}</p>
+</div>
+<!-- Image/Facts -->
+<div class="container-fluid" id="image_facts">
+  <div class="row">
+    <div class="col-8" id="featured_image">
+      <h1>Featured Mars Image</h1>
+      <img class="img-fluid" src="{{search_result.image_full_url}}">
+    </div>
+    <div class="col-3" id="facts_table">
+        <h3>Mars Facts</h3>
+        {{search_result.table_html | safe}}
+    </div>
+  </div>
+</div>
+<!-- Mars Hemispheres -->
+<div class="container-fluid" id="image_facts">
+  <div class="row">
+    <div class="col-3 col-6">
+      <img class="img-fluid" src = "{{search_result.hemi_list[0].image_url}}">
+    </div>
+    <div class="col-3 col-6">
+      <img class="img-fluid" src = "{{search_result.hemi_list[1].image_url}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 col-6">
+      <img class="img-fluid" src = "{{search_result.hemi_list[2].image_url}}">
+    </div>
+    <div class="col-3 col-6">
+      <img class="img-fluid" src = "{{search_result.hemi_list[3].image_url}}">
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
+
+<!-- navbar 
+  <nav class="navbar navbar-expand-md navbar-light bg-light" id="nav_main">
+      <div class="container-fluid" id="nav_main_cont">
+        <a class="navbar-brand" id="home_nav" href="index.html"><h4>Latitude</h4></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+
+ nav item list 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Plots
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="pages\vizualizations\viz_temp.html">Max Temperature</a></li>
+              <li><a class="dropdown-item" href="pages\vizualizations\viz_humidity.html">Humidity</a></li>
+              <li><a class="dropdown-item" href="pages\vizualizations\viz_cloud.html">Cloudiness</a></li>
+              <li><a class="dropdown-item" href="pages\vizualizations\viz_wind.html">Wind Speed</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="pages/comparisons.html">Comparison</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/data.html">Data</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+ main content
+      <div class="container" id="main_window">
+        <div class="row align-items-start">
+          <div class="col-md-7">
+              <h1>Summary: Latitude vs. X</h1>
+              <img class="img-fluid rounded float-md-start" id="eg_img" src="Resources/assets/images/1.1-latitudevstemperature.png" class="rounded float-start" alt="">
+            <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.</p>
+            <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site provides the source data and visualizations created as part of the analysis, as well as explanations and descriptions of any trends and correlations witnessed.</p>
+          </div>
+          <div class="col-md-5" id="viz_grid">
+              <h2>Vizualizations</h2>
+            <div class="container">
+                <div class="row">
+                  <div class="col-3 col-md-6" id="viz_thumb_cont">
+                    <a href="pages\vizualizations\viz_temp.html"><img class="img-fluid" src="Resources/assets/images/1.1-latitudevstemperature.png" id="viz_thumb" alt=""></a>
+                  </div>
+                  <div class="col-3 col-md-6" id="viz_thumb_cont">
+                    <a href="pages\vizualizations\viz_humidity.html"><img class="img-fluid" src="Resources/assets/images/1.2-latitudevshumidity.png" id="viz_thumb" alt=""></a>
+                  </div>
+                    <div class="col-3 col-md-6" id="viz_thumb_cont">
+                        <a href="pages\vizualizations\viz_cloud.html"><img class="img-fluid" src="Resources/assets/images/1.3-latitudevscloud.png" id="viz_thumb" alt=""></a>
+                    </div>
+                    <div class="col-3 col-md-6" id="viz_thumb_cont">
+                        <a href="pages\vizualizations\viz_wind.html"><img class="img-fluid" src="Resources/assets/images/1.4-latitudevswind.png" id="viz_thumb" alt=""></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
