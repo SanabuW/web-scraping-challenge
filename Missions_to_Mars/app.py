@@ -8,7 +8,7 @@ import time
 import pymongo
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
-from Missions_to_Mars.scrape_mars import scrape_nasa
+from scrape_mars import scrape_nasa
 
 
 # %%
