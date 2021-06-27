@@ -30,7 +30,10 @@ This repository is for the web scraping assignment for the UCSD Data Bootcamp us
 - General Mars Information: https://space-facts.com/mars/
 - Images for each Mars Hemisphere: https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars
  
- The infomration is assembled into a Python dictionary and returned to the Flask object, to be rendered using Jinga.
+ The infomration is assembled into a Python dictionary and returned to the Flask object, to be rendered using Jinga. The data is also updated as a new record in the mongoDB database mars_coll.
+ 
+<img src="other_resources/img_3.png" width="700"/>
+
  
 ### mission_to_mars.ipynb
 - Jupyter Notebook to design scraping code
