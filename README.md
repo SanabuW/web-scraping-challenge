@@ -9,9 +9,9 @@ This repository is for the web scraping assignment for the UCSD Data Bootcamp us
 *Requires Google Chrome browser for the scraper script to operate
 
 
-<img src="web-scraping-challenge/other_resources/img_1.png" width="700"/>
+<img src="other_resources/img_1.png" width="700"/>
 
-<img src="web-scraping-challenge/other_resources/img_2.png" width="700"/>
+<img src="other_resources/img_2.png" width="700"/>
 
 
 # File Overview
